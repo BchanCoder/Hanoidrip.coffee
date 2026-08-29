@@ -1,0 +1,618 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Get 6 Free Drinks Every Month! — Amaro Coffee Co. Membership</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --ink:#1a1a1a;
+    --paper:#ffffff;
+    --muted:#6b6f76;
+    --line:#e7e5e0;
+    --chip:#f2f1ee;
+    --accent:#8a6b3f;   /* warm coffee brown, used sparingly */
+  }
+  *{box-sizing:border-box;}
+  body{
+    margin:0;
+    background:var(--paper);
+    color:var(--ink);
+    font-family:'Inter', sans-serif;
+    -webkit-font-smoothing:antialiased;
+  }
+  a{text-decoration:none;color:inherit;}
+  .wrap{max-width:1180px;margin:0 auto;padding:0 40px;}
+
+  /* ---------- TOP BAR ---------- */
+  .topbar{
+    background:var(--ink);
+    height:8px;
+  }
+
+  /* ---------- NAV ---------- */
+  .nav{
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+    padding:22px 40px;
+    max-width:1180px;
+    margin:0 auto;
+    border-bottom:1px solid var(--line);
+  }
+  .brand{
+    display:flex;
+    align-items:center;
+    gap:12px;
+    font-weight:700;
+    font-size:16px;
+  }
+  .brand-mark{
+    width:34px;height:34px;
+    border-radius:8px;
+    background:var(--ink);
+    color:#fff;
+    display:flex;align-items:center;justify-content:center;
+    font-size:16px;
+  }
+  .btn{
+    display:inline-block;
+    font-weight:700;
+    font-size:14px;
+    padding:11px 22px;
+    border-radius:999px;
+    border:none;
+    cursor:pointer;
+    font-family:'Inter',sans-serif;
+  }
+  .btn-dark{background:var(--ink);color:#fff;}
+  .btn-dark:hover{background:#000;}
+
+  /* ---------- HERO ---------- */
+  .hero{
+    padding:64px 0 88px;
+    display:grid;
+    grid-template-columns:1fr 1fr;
+    gap:64px;
+    align-items:center;
+  }
+  .rating-chip{
+    display:inline-flex;
+    align-items:center;
+    gap:6px;
+    background:var(--chip);
+    border-radius:999px;
+    padding:6px 14px;
+    font-size:13px;
+    font-weight:600;
+    color:#3d3d3d;
+    margin-bottom:22px;
+  }
+  .hero h1{
+    font-size:clamp(36px,4.4vw,52px);
+    line-height:1.08;
+    font-weight:800;
+    letter-spacing:-0.01em;
+    margin:0;
+  }
+  .hero p.lede{
+    margin-top:20px;
+    font-size:16px;
+    line-height:1.65;
+    color:var(--muted);
+    max-width:460px;
+  }
+  .hero .btn{
+    margin-top:30px;
+    padding:16px 28px;
+    font-size:15px;
+  }
+
+  /* ---------- HERO MEDIA CARD ---------- */
+  .media-card{
+    border-radius:18px;
+    border:1px solid var(--line);
+    overflow:hidden;
+    box-shadow:0 20px 50px rgba(0,0,0,0.08);
+  }
+  .media-photo{
+    height:360px;
+    background:linear-gradient(135deg,#caa46b 0%,#8a6b3f 45%,#4f7a52 100%);
+    position:relative;
+    display:flex;
+    align-items:flex-end;
+    justify-content:center;
+    gap:18px;
+    padding-bottom:36px;
+  }
+  .cup{
+    width:70px;
+    height:130px;
+    background:rgba(255,255,255,0.92);
+    border-radius:8px 8px 22px 22px;
+    position:relative;
+    box-shadow:0 10px 24px rgba(0,0,0,0.25);
+  }
+  .cup::before{
+    content:"YOUR LOGO";
+    position:absolute;
+    top:44%;
+    left:50%;
+    transform:translate(-50%,-50%) rotate(0deg);
+    font-size:8px;
+    font-weight:800;
+    letter-spacing:0.06em;
+    color:#4f7a52;
+    text-align:center;
+    width:56px;
+  }
+  .cup.dark{background:rgba(60,40,20,0.85);}
+  .cup.dark::before{color:#e9dcc4;}
+  .media-controls{
+    display:flex;
+    align-items:center;
+    gap:10px;
+    padding:14px 18px;
+  }
+  .arrow{
+    width:22px;height:22px;
+    border-radius:50%;
+    border:1px solid var(--line);
+    display:flex;align-items:center;justify-content:center;
+    font-size:11px;
+    color:var(--muted);
+    flex-shrink:0;
+  }
+  .dots-track{
+    flex:1;
+    height:4px;
+    background:var(--chip);
+    border-radius:999px;
+    position:relative;
+  }
+  .dots-track::before{
+    content:"";
+    position:absolute;
+    left:0;top:0;bottom:0;
+    width:35%;
+    background:#c7c4bd;
+    border-radius:999px;
+  }
+  .media-foot{
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+    padding:14px 18px;
+    border-top:1px solid var(--line);
+    background:#fafaf9;
+    font-size:13px;
+  }
+  .media-foot .promo{
+    display:flex;
+    align-items:center;
+    gap:8px;
+    color:#3d3d3d;
+    font-weight:500;
+  }
+  .media-foot .price{
+    font-weight:700;
+  }
+
+  /* ---------- MEMBERSHIP INCLUDES ---------- */
+  .section{
+    padding:70px 0 90px;
+  }
+  .section h2{
+    text-align:center;
+    font-size:clamp(28px,3.2vw,36px);
+    font-weight:800;
+    margin:0 0 40px;
+  }
+  .perks{
+    display:grid;
+    grid-template-columns:repeat(4,1fr);
+    gap:20px;
+  }
+  .perk{
+    border:1px solid var(--line);
+    border-radius:14px;
+    overflow:hidden;
+    background:#fff;
+    transition:box-shadow .2s ease, transform .2s ease;
+  }
+  .perk:hover{
+    box-shadow:0 14px 30px rgba(0,0,0,0.08);
+    transform:translateY(-2px);
+  }
+  .perk-photo{
+    height:150px;
+    background:linear-gradient(135deg,var(--p1,#caa46b),var(--p2,#4f7a52));
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    font-size:34px;
+  }
+  .perk-body{padding:16px 18px 20px;}
+  .perk h3{
+    font-size:15px;
+    font-weight:700;
+    margin:0 0 8px;
+  }
+  .perk p{
+    font-size:13px;
+    line-height:1.55;
+    color:var(--muted);
+    margin:0 0 12px;
+    min-height:56px;
+  }
+  .included-tag{
+    display:inline-block;
+    background:var(--chip);
+    color:#3d3d3d;
+    font-size:11px;
+    font-weight:700;
+    padding:5px 10px;
+    border-radius:6px;
+  }
+
+  @media (max-width:900px){
+    .hero{grid-template-columns:1fr;}
+    .perks{grid-template-columns:repeat(2,1fr);}
+    .nav, .wrap{padding-left:20px;padding-right:20px;}
+  }
+  @media (max-width:520px){
+    .perks{grid-template-columns:1fr;}
+  }
+
+  /* ---------- REDEEM MODAL ---------- */
+  .perk{cursor:pointer;}
+  .modal-overlay{
+    position:fixed;
+    inset:0;
+    background:rgba(20,20,20,0.55);
+    display:none;
+    align-items:center;
+    justify-content:center;
+    z-index:100;
+    padding:20px;
+  }
+  .modal-overlay.open{display:flex;}
+  .modal-card{
+    width:100%;
+    max-width:400px;
+    background:linear-gradient(180deg,#34c777 0%,#1fa860 100%);
+    border-radius:28px;
+    padding:28px 26px 24px;
+    position:relative;
+    color:#fff;
+    box-shadow:0 30px 70px rgba(0,0,0,0.35);
+    animation:pop-in .22s ease;
+  }
+  @keyframes pop-in{
+    from{opacity:0; transform:translateY(14px) scale(0.98);}
+    to{opacity:1; transform:translateY(0) scale(1);}
+  }
+  .modal-handle{
+    display:flex;
+    gap:8px;
+    justify-content:center;
+    margin-bottom:18px;
+  }
+  .modal-handle span{
+    width:26px;height:4px;
+    border-radius:999px;
+    background:rgba(255,255,255,0.55);
+  }
+  .modal-close-x{
+    position:absolute;
+    top:22px;
+    right:22px;
+    width:26px;height:26px;
+    border-radius:50%;
+    border:none;
+    background:transparent;
+    color:#fff;
+    font-size:18px;
+    cursor:pointer;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+  }
+  .modal-check{
+    width:88px;height:88px;
+    border-radius:50%;
+    background:rgba(255,255,255,0.18);
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    margin:6px auto 22px;
+  }
+  .modal-check svg{width:44px;height:44px;}
+  .modal-title{
+    text-align:center;
+    font-size:30px;
+    font-weight:800;
+    margin:0 0 10px;
+  }
+  .modal-sub{
+    text-align:center;
+    font-size:15px;
+    color:rgba(255,255,255,0.85);
+    margin:0 0 24px;
+  }
+  .modal-reward-card{
+    background:#fff;
+    color:var(--ink);
+    border-radius:16px;
+    padding:20px 20px 18px;
+  }
+  .modal-reward-top{
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+    margin-bottom:10px;
+  }
+  .modal-reward-label{
+    font-size:11px;
+    font-weight:800;
+    letter-spacing:0.06em;
+    color:#1fa860;
+  }
+  .modal-reward-title{
+    font-size:22px;
+    font-weight:800;
+    margin:0 0 8px;
+  }
+  .modal-reward-desc{
+    font-size:14px;
+    color:var(--muted);
+    line-height:1.55;
+    margin:0;
+  }
+  .modal-divider{
+    border:none;
+    border-top:1px solid var(--line);
+    margin:16px 0 14px;
+  }
+  .modal-timestamp{
+    font-size:13px;
+    color:#8a8f98;
+  }
+  .modal-footer{
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+    margin-top:20px;
+  }
+  .modal-member{
+    display:flex;
+    align-items:center;
+    gap:12px;
+  }
+  .modal-avatar{
+    width:38px;height:38px;
+    border-radius:50%;
+    background:rgba(255,255,255,0.25);
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    font-weight:700;
+  }
+  .modal-member-name{font-weight:700;font-size:15px;}
+  .modal-member-id{font-size:12px;color:rgba(255,255,255,0.7);}
+  .modal-close-btn{
+    background:none;
+    border:none;
+    color:#fff;
+    font-weight:600;
+    font-size:15px;
+    cursor:pointer;
+  }
+</style>
+</head>
+<body>
+
+<div class="topbar"></div>
+
+<nav class="nav">
+  <div class="brand">
+    <div class="brand-mark">☕</div>
+    Amaro Coffee Membership
+  </div>
+  <button class="btn btn-dark">Join</button>
+</nav>
+
+<header class="wrap hero">
+  <div>
+    <div class="rating-chip">★ 4.8 across 725 reviews</div>
+    <h1>Get 6 Free Drinks Every Month!</h1>
+    <p class="lede">Join our membership to get 6 free drinks every month, free drinks for friends, secret menu access, 15% off merch and coffee bags, and so much more!</p>
+    <button class="btn btn-dark">Join For 50% Off Your 1st Month</button>
+  </div>
+
+  <div class="media-card">
+    <div class="media-photo" style="padding:0;">
+      <svg viewBox="0 0 500 340" width="100%" height="100%" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMax slice" role="img" aria-label="Illustration of two iced coffee drinks held up side by side">
+        <defs>
+          <linearGradient id="sky" x1="0" y1="0" x2="0" y2="1">
+            <stop offset="0%" stop-color="#bfe3f0"/>
+            <stop offset="100%" stop-color="#e7f4e0"/>
+          </linearGradient>
+        </defs>
+        <rect x="0" y="0" width="500" height="340" fill="url(#sky)"/>
+        <circle cx="90" cy="70" r="46" fill="#f5e7b8" opacity="0.7"/>
+        <ellipse cx="60" cy="300" rx="220" ry="60" fill="#dfeedd"/>
+
+        <g transform="translate(60,300) rotate(-8)">
+          <ellipse cx="0" cy="10" rx="46" ry="20" fill="#3b2415"/>
+          <path d="M-38 -170 L38 -170 L30 40 Q0 55 -30 40 Z" fill="#f4efe6" stroke="#c9c2b3" stroke-width="1.5"/>
+          <path d="M-33 -95 L29 -95 L23 30 Q0 40 -25 30 Z" fill="#caa46b"/>
+          <path d="M-33 -95 L29 -95 L27 -70 L-31 -70 Z" fill="#e9d9c0"/>
+          <ellipse cx="-2" cy="-172" rx="40" ry="10" fill="#f4efe6" stroke="#c9c2b3" stroke-width="1.5"/>
+          <ellipse cx="-2" cy="-176" rx="30" ry="6" fill="#ffffff" stroke="#c9c2b3" stroke-width="1"/>
+          <rect x="-7" y="-210" width="8" height="46" rx="3" fill="#e4653a"/>
+          <text x="-2" y="-15" text-anchor="middle" font-family="Inter, sans-serif" font-size="12" font-weight="800" fill="#5a4632" letter-spacing="0.5">AMARO</text>
+        </g>
+
+        <g transform="translate(260,300) rotate(6)">
+          <ellipse cx="0" cy="10" rx="46" ry="20" fill="#3b2415"/>
+          <path d="M-38 -170 L38 -170 L30 40 Q0 55 -30 40 Z" fill="#f4efe6" stroke="#c9c2b3" stroke-width="1.5"/>
+          <path d="M-33 -60 L27 -60 L23 30 Q0 40 -25 30 Z" fill="#e58a5c"/>
+          <path d="M-34 -95 L28 -95 L27 -60 L-33 -60 Z" fill="#f4efe6"/>
+          <path d="M-33 -95 L29 -95 L27 -128 L-31 -128 Z" fill="#5c7a3a"/>
+          <path d="M-31 -128 L27 -128 L26 -145 L-30 -145 Z" fill="#7c9a4d"/>
+          <ellipse cx="-2" cy="-172" rx="40" ry="10" fill="#f4efe6" stroke="#c9c2b3" stroke-width="1.5"/>
+          <ellipse cx="-2" cy="-176" rx="30" ry="6" fill="#ffffff" stroke="#c9c2b3" stroke-width="1"/>
+          <rect x="-7" y="-210" width="8" height="46" rx="3" fill="#3f5c33"/>
+          <text x="-2" y="-30" text-anchor="middle" font-family="Inter, sans-serif" font-size="12" font-weight="800" fill="#3f5c33" letter-spacing="0.5">AMARO</text>
+        </g>
+
+        <path d="M-20 340 Q10 220 90 175 Q120 160 130 175 L150 340 Z" fill="#c9946b"/>
+        <path d="M180 340 Q210 220 260 178 Q285 165 300 178 L320 340 Z" fill="#a06b47"/>
+      </svg>
+    </div>
+    <div class="media-controls">
+      <div class="arrow">‹</div>
+      <div class="dots-track"></div>
+      <div class="arrow">›</div>
+    </div>
+    <div class="media-foot">
+      <div class="promo">🏷️ Try 30 days for $12</div>
+      <div class="price">$25/month</div>
+    </div>
+  </div>
+</header>
+
+<section class="section wrap">
+  <h2>Membership Includes</h2>
+  <div class="perks">
+    <div class="perk" data-title="6 Drinks Per Month" data-desc="Enjoy 6 free 16oz drinks per month. Limit one per day.">
+      <div class="perk-photo" style="--p1:#d9c79a;--p2:#7a5a34;padding:0;">
+        <svg viewBox="0 0 160 150" width="72" height="90" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Illustration of an iced coffee cup">
+          <path d="M55 20 L105 20 L98 130 Q80 140 62 130 Z" fill="#f4efe6" stroke="#c9c2b3" stroke-width="1.5"/>
+          <path d="M58 70 L102 70 L98 120 Q80 128 64 120 Z" fill="#caa46b"/>
+          <ellipse cx="80" cy="18" rx="28" ry="7" fill="#f4efe6" stroke="#c9c2b3" stroke-width="1.5"/>
+          <rect x="76" y="0" width="6" height="24" rx="2" fill="#e4653a"/>
+        </svg>
+      </div>
+      <div class="perk-body">
+        <h3>6 Drinks Per Month</h3>
+        <p>Enjoy 6 free 16oz drinks per month. Limit one per day.</p>
+        <span class="included-tag">Included</span>
+      </div>
+    </div>
+    <div class="perk" data-title="BOGO Drink for a Friend" data-desc="Buy any drink, get a free drink for a friend of equal or lesser value.">
+      <div class="perk-photo" style="--p1:#8fae6b;--p2:#3f5c33;">🤝</div>
+      <div class="perk-body">
+        <h3>BOGO Drink for a Friend</h3>
+        <p>Buy any drink, get a free drink for a friend of equal or lesser value.</p>
+        <span class="included-tag">Included</span>
+      </div>
+    </div>
+    <div class="perk" data-title="Birthday Drink" data-desc="Enjoy a free drink on your birthday! Flexible one day either side.">
+      <div class="perk-photo" style="--p1:#e7b7c4;--p2:#a4677c;">🎂</div>
+      <div class="perk-body">
+        <h3>Birthday Drink</h3>
+        <p>Enjoy a free drink on your birthday! Flexible one day either side.</p>
+        <span class="included-tag">Included</span>
+      </div>
+    </div>
+    <div class="perk" data-title="15% off Merch & Coffee Bags" data-desc="Exclusive discounts on merch and coffee, in-store and online.">
+      <div class="perk-photo" style="--p1:#c9b79a;--p2:#5a4632;">🏷️</div>
+      <div class="perk-body">
+        <h3>15% off Merch &amp; Coffee Bags</h3>
+        <p>Exclusive discounts on merch and coffee, in-store and online.</p>
+        <span class="included-tag">Included</span>
+      </div>
+    </div>
+    <div class="perk" data-title="Secret Menu Access" data-desc="Get access to off-menu drinks we're testing on members first.">
+      <div class="perk-photo" style="--p1:#5c6b3a;--p2:#242b16;">🔒</div>
+      <div class="perk-body">
+        <h3>Secret Menu Access</h3>
+        <p>Get access to off-menu drinks we're testing on members first.</p>
+        <span class="included-tag">Included</span>
+      </div>
+    </div>
+    <div class="perk" data-title="Exclusive Announcements" data-desc="Be the first to know about new drops, pop-ups, and events.">
+      <div class="perk-photo" style="--p1:#3a3a3a;--p2:#111111;">📣</div>
+      <div class="perk-body">
+        <h3>Exclusive Announcements</h3>
+        <p>Be the first to know about new drops, pop-ups, and events.</p>
+        <span class="included-tag">Included</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="modal-overlay" id="modalOverlay">
+  <div class="modal-card">
+    <button class="modal-close-x" id="modalCloseX" aria-label="Close">✕</button>
+    <div class="modal-handle"><span></span><span></span><span></span></div>
+    <div class="modal-check">
+      <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <path d="M5 13l4 4L19 7" stroke="#fff" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
+      </svg>
+    </div>
+    <h2 class="modal-title">Valid offer!</h2>
+    <p class="modal-sub">Show this to our staff.</p>
+
+    <div class="modal-reward-card">
+      <div class="modal-reward-top">
+        <span class="modal-reward-label">MEMBERSHIP REWARD</span>
+        <span style="color:#1fa860;font-size:16px;">★</span>
+      </div>
+      <h3 class="modal-reward-title" id="modalRewardTitle">6 Drinks Per Month</h3>
+      <p class="modal-reward-desc" id="modalRewardDesc">Enjoy 6 free 16oz drinks per month. Limit one per day.</p>
+      <hr class="modal-divider">
+      <div class="modal-timestamp" id="modalTimestamp">Aug 28, 2026 · 3:03pm PT</div>
+    </div>
+
+    <div class="modal-footer">
+      <div class="modal-member">
+        <div class="modal-avatar">J</div>
+        <div>
+          <div class="modal-member-name">Jordan Lee</div>
+          <div class="modal-member-id">#8757446</div>
+        </div>
+      </div>
+      <button class="modal-close-btn" id="modalCloseBtn">Close</button>
+    </div>
+  </div>
+</div>
+
+<script>
+  const overlay = document.getElementById('modalOverlay');
+  const rewardTitle = document.getElementById('modalRewardTitle');
+  const rewardDesc = document.getElementById('modalRewardDesc');
+  const timestampEl = document.getElementById('modalTimestamp');
+
+  function openModal(title, desc){
+    rewardTitle.textContent = title;
+    rewardDesc.textContent = desc;
+    const now = new Date();
+    const dateStr = now.toLocaleDateString('en-US', { month:'short', day:'numeric', year:'numeric' });
+    const timeStr = now.toLocaleTimeString('en-US', { hour:'numeric', minute:'2-digit' });
+    timestampEl.textContent = `${dateStr} · ${timeStr}`;
+    overlay.classList.add('open');
+  }
+  function closeModal(){
+    overlay.classList.remove('open');
+  }
+
+  document.querySelectorAll('.perk').forEach(function(card){
+    card.addEventListener('click', function(){
+      openModal(card.getAttribute('data-title'), card.getAttribute('data-desc'));
+    });
+  });
+  document.getElementById('modalCloseX').addEventListener('click', closeModal);
+  document.getElementById('modalCloseBtn').addEventListener('click', closeModal);
+  overlay.addEventListener('click', function(e){
+    if(e.target === overlay) closeModal();
+  });
+</script>
+
+</body>
+</html>
