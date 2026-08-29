@@ -15,6 +15,7 @@
     --line:#e7e5e0;
     --chip:#f2f1ee;
     --accent:#8a6b3f;
+    --brand-green:#27c774;
   }
   *{box-sizing:border-box;}
   body{
@@ -200,6 +201,7 @@
     background:#fff;
     cursor:pointer;
     transition:box-shadow .2s ease, transform .2s ease;
+    user-select:none;
   }
   .perk:hover{
     box-shadow:0 14px 30px rgba(0,0,0,0.08);
@@ -213,11 +215,11 @@
     justify-content:center;
     font-size:34px;
     overflow:hidden;
-    pointer-events: none;
+    pointer-events:none;
   }
   .perk-body{
     padding:16px 18px 20px;
-    pointer-events: none;
+    pointer-events:none;
   }
   .perk h3{
     font-size:15px;
@@ -250,124 +252,140 @@
     .perks{grid-template-columns:1fr;}
   }
 
-  /* ---------- REDEEM MODAL ---------- */
+  /* ---------- REDEEM MODAL (POPUP) ---------- */
   .modal-overlay{
     position:fixed;
     inset:0;
-    background:rgba(20,20,20,0.55);
+    background:rgba(15,20,18,0.65);
+    backdrop-filter:blur(3px);
     display:none;
     align-items:center;
     justify-content:center;
-    z-index:100;
+    z-index:9999;
     padding:20px;
   }
   .modal-overlay.open{display:flex;}
   .modal-card{
     width:100%;
-    max-width:400px;
-    background:linear-gradient(180deg,#34c777 0%,#1fa860 100%);
-    border-radius:28px;
-    padding:28px 26px 24px;
+    max-width:420px;
+    background:linear-gradient(180deg,#2cd379 0%,#20be6b 100%);
+    border-radius:32px;
+    padding:26px 24px 22px;
     position:relative;
     color:#fff;
-    box-shadow:0 30px 70px rgba(0,0,0,0.35);
-    animation:pop-in .22s ease;
+    box-shadow:0 25px 60px rgba(0,0,0,0.35);
+    animation:pop-in .22s cubic-bezier(0.16, 1, 0.3, 1);
   }
   @keyframes pop-in{
-    from{opacity:0; transform:translateY(14px) scale(0.98);}
+    from{opacity:0; transform:translateY(20px) scale(0.96);}
     to{opacity:1; transform:translateY(0) scale(1);}
   }
   .modal-handle{
     display:flex;
-    gap:8px;
+    gap:6px;
     justify-content:center;
-    margin-bottom:18px;
+    margin-bottom:14px;
   }
   .modal-handle span{
-    width:26px;height:4px;
+    width:32px;height:4px;
     border-radius:999px;
-    background:rgba(255,255,255,0.55);
+    background:rgba(255,255,255,0.45);
   }
   .modal-close-x{
     position:absolute;
-    top:22px;
-    right:22px;
-    width:26px;height:26px;
+    top:20px;
+    right:20px;
+    width:30px;height:30px;
     border-radius:50%;
     border:none;
     background:transparent;
     color:#fff;
-    font-size:18px;
+    font-size:20px;
     cursor:pointer;
     display:flex;
     align-items:center;
     justify-content:center;
+    opacity:0.9;
   }
+  .modal-close-x:hover{opacity:1;}
   .modal-check{
-    width:88px;height:88px;
+    width:90px;height:90px;
     border-radius:50%;
-    background:rgba(255,255,255,0.18);
+    background:rgba(255,255,255,0.22);
     display:flex;
     align-items:center;
     justify-content:center;
-    margin:6px auto 22px;
+    margin:4px auto 18px;
   }
-  .modal-check svg{width:44px;height:44px;}
+  .modal-check svg{
+    width:48px;height:48px;
+  }
   .modal-title{
     text-align:center;
-    font-size:30px;
+    font-size:32px;
     font-weight:800;
-    margin:0 0 10px;
+    margin:0 0 6px;
+    letter-spacing:-0.02em;
   }
   .modal-sub{
     text-align:center;
     font-size:15px;
-    color:rgba(255,255,255,0.85);
-    margin:0 0 24px;
+    color:rgba(255,255,255,0.9);
+    margin:0 0 22px;
+    font-weight:500;
   }
   .modal-reward-card{
-    background:#fff;
+    background:#ffffff;
     color:var(--ink);
-    border-radius:16px;
-    padding:20px 20px 18px;
+    border-radius:20px;
+    padding:22px 22px 20px;
+    box-shadow:0 10px 25px rgba(0,0,0,0.06);
   }
   .modal-reward-top{
     display:flex;
     align-items:center;
     justify-content:space-between;
-    margin-bottom:10px;
+    margin-bottom:8px;
   }
   .modal-reward-label{
     font-size:11px;
     font-weight:800;
     letter-spacing:0.06em;
-    color:#1fa860;
+    color:#20be6b;
+  }
+  .modal-reward-star{
+    color:#20be6b;
+    font-size:15px;
   }
   .modal-reward-title{
-    font-size:20px;
+    font-size:23px;
     font-weight:800;
     margin:0 0 8px;
+    letter-spacing:-0.01em;
+    color:#111827;
   }
   .modal-reward-desc{
     font-size:14px;
-    color:var(--muted);
-    line-height:1.55;
+    color:#6b7280;
+    line-height:1.5;
     margin:0;
   }
   .modal-divider{
     border:none;
-    border-top:1px solid var(--line);
-    margin:16px 0 14px;
+    border-top:1px solid #f0eee9;
+    margin:18px 0 14px;
   }
   .modal-timestamp{
     font-size:13px;
-    color:#8a8f98;
+    color:#9ca3af;
+    font-weight:500;
   }
   .modal-footer{
     display:flex;
     align-items:center;
     justify-content:space-between;
     margin-top:20px;
+    padding:0 4px;
   }
   .modal-member{
     display:flex;
@@ -375,23 +393,33 @@
     gap:12px;
   }
   .modal-avatar{
-    width:38px;height:38px;
+    width:42px;height:42px;
     border-radius:50%;
-    background:rgba(255,255,255,0.25);
+    background:rgba(255,255,255,0.28);
     display:flex;
     align-items:center;
     justify-content:center;
-    font-weight:700;
+    font-weight:800;
+    font-size:17px;
   }
-  .modal-member-name{font-weight:700;font-size:15px;}
-  .modal-member-id{font-size:12px;color:rgba(255,255,255,0.7);}
+  .modal-member-name{
+    font-weight:700;
+    font-size:16px;
+    line-height:1.2;
+  }
+  .modal-member-id{
+    font-size:12px;
+    color:rgba(255,255,255,0.8);
+    margin-top:2px;
+  }
   .modal-close-btn{
     background:none;
     border:none;
     color:#fff;
-    font-weight:600;
-    font-size:15px;
+    font-weight:700;
+    font-size:16px;
     cursor:pointer;
+    padding:8px 12px;
   }
 </style>
 </head>
@@ -428,6 +456,7 @@
         <circle cx="90" cy="70" r="46" fill="#f5e7b8" opacity="0.7"/>
         <ellipse cx="60" cy="300" rx="220" ry="60" fill="#dfeedd"/>
 
+        <!-- Cup 1 -->
         <g transform="translate(60,300) rotate(-8)">
           <ellipse cx="0" cy="10" rx="46" ry="20" fill="#3b2415"/>
           <path d="M-38 -170 L38 -170 L30 40 Q0 55 -30 40 Z" fill="#f4efe6" stroke="#c9c2b3" stroke-width="1.5"/>
@@ -439,6 +468,7 @@
           <text x="-2" y="-15" text-anchor="middle" font-family="Inter, sans-serif" font-size="10" font-weight="800" fill="#ffffff" letter-spacing="0.5">HANOI DRIP</text>
         </g>
 
+        <!-- Cup 2 -->
         <g transform="translate(260,300) rotate(6)">
           <ellipse cx="0" cy="10" rx="46" ry="20" fill="#3b2415"/>
           <path d="M-38 -170 L38 -170 L30 40 Q0 55 -30 40 Z" fill="#f4efe6" stroke="#c9c2b3" stroke-width="1.5"/>
@@ -471,7 +501,8 @@
 <section class="section wrap">
   <h2>Membership Includes</h2>
   <div class="perks">
-    <div class="perk" data-title="6 Drinks Per Month" data-desc="Enjoy 6 free 16 oz drinks per month. Limit one per day.">
+    <!-- Perk 1 -->
+    <div class="perk" data-title="6 Drinks Per Month" data-desc="Enjoy 6 free 16oz drinks per month. Limit one per day.">
       <div class="perk-photo" style="padding:0; overflow:hidden; height:180px;">
         <img src="https://kluveujanmooncwshkhm.supabase.co/storage/v1/object/public/gallery/w6rbd9d7qh.png" alt="6 Drinks Per Month" style="width:100%; height:100%; object-fit:cover; display:block;">
       </div>
@@ -482,7 +513,8 @@
       </div>
     </div>
 
-    <div class="perk" data-title="BOGO Drink for a Friend" data-desc="Buy any drink, get a free Cà Phê Sữa Đá or specialty drink of equal or lesser value for a friend.">
+    <!-- Perk 2 -->
+    <div class="perk" data-title="BOGO Drink for a Friend" data-desc="Buy any drink, get a free drink for a friend of equal or lesser value.">
       <div class="perk-photo" style="padding:0; overflow:hidden; height:180px;">
         <img src="https://kluveujanmooncwshkhm.supabase.co/storage/v1/object/public/gallery/oyidhqz9o5.png" alt="BOGO Drink for a Friend" style="width:100%; height:100%; object-fit:cover; display:block;">
       </div>
@@ -493,6 +525,7 @@
       </div>
     </div>
 
+    <!-- Perk 3 -->
     <div class="perk" data-title="Birthday Specialty Drink" data-desc="Celebrate with any large specialty drink on your birthday! Valid one day either side.">
       <div class="perk-photo" style="--p1:#e7b7c4;--p2:#a4677c;">🎂</div>
       <div class="perk-body">
@@ -502,6 +535,7 @@
       </div>
     </div>
 
+    <!-- Perk 4 -->
     <div class="perk" data-title="15% Off Roasted Robusta Bags" data-desc="15% off all premium whole-bean and ground Vietnamese Robusta bags and Phin drippers.">
       <div class="perk-photo" style="--p1:#c9b79a;--p2:#5a4632;">🏷️</div>
       <div class="perk-body">
@@ -511,6 +545,7 @@
       </div>
     </div>
 
+    <!-- Perk 5 -->
     <div class="perk" data-title="Secret Menu & Tasting Flights" data-desc="Get exclusive first access to seasonal experimental batches, coconut foam recipes, and testing flights.">
       <div class="perk-photo" style="--p1:#5c6b3a;--p2:#242b16;">🔒</div>
       <div class="perk-body">
@@ -520,6 +555,7 @@
       </div>
     </div>
 
+    <!-- Perk 6 -->
     <div class="perk" data-title="VIP Drop & Event Invites" data-desc="Priority RSVP to cupping workshops, local pop-ups, and limited roast releases.">
       <div class="perk-photo" style="--p1:#3a3a3a;--p2:#111111;">📣</div>
       <div class="perk-body">
@@ -531,9 +567,82 @@
   </div>
 </section>
 
+<!-- REDEEM MODAL (POPUP) -->
 <div class="modal-overlay" id="modalOverlay">
   <div class="modal-card">
     <button class="modal-close-x" id="modalCloseX" aria-label="Close">✕</button>
     <div class="modal-handle"><span></span><span></span><span></span></div>
+    
     <div class="modal-check">
       <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <path d="M5 13l4 4L19 7" stroke="#ffffff" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
+      </svg>
+    </div>
+
+    <h2 class="modal-title">Valid offer!</h2>
+    <p class="modal-sub">Show this to our staff.</p>
+
+    <div class="modal-reward-card">
+      <div class="modal-reward-top">
+        <span class="modal-reward-label">MEMBERSHIP REWARD</span>
+        <span class="modal-reward-star">★</span>
+      </div>
+      <h3 class="modal-reward-title" id="modalRewardTitle">6 Drinks Per Month</h3>
+      <p class="modal-reward-desc" id="modalRewardDesc">Enjoy 6 free 16oz drinks per month. Limit one per day.</p>
+      <hr class="modal-divider">
+      <div class="modal-timestamp" id="modalTimestamp">Aug 28, 2026 · 11:14 PM</div>
+    </div>
+
+    <div class="modal-footer">
+      <div class="modal-member">
+        <div class="modal-avatar">J</div>
+        <div>
+          <div class="modal-member-name">Jordan Lee</div>
+          <div class="modal-member-id">#8757446</div>
+        </div>
+      </div>
+      <button class="modal-close-btn" id="modalCloseBtn">Close</button>
+    </div>
+  </div>
+</div>
+
+<script>
+  const overlay = document.getElementById('modalOverlay');
+  const rewardTitle = document.getElementById('modalRewardTitle');
+  const rewardDesc = document.getElementById('modalRewardDesc');
+  const timestampEl = document.getElementById('modalTimestamp');
+
+  function openModal(title, desc){
+    rewardTitle.textContent = title;
+    rewardDesc.textContent = desc;
+    
+    const now = new Date();
+    const dateStr = now.toLocaleDateString('en-US', { month:'short', day:'numeric', year:'numeric' });
+    const timeStr = now.toLocaleTimeString('en-US', { hour:'numeric', minute:'2-digit', hour12:true });
+    timestampEl.textContent = `${dateStr} · ${timeStr}`;
+    
+    overlay.classList.add('open');
+  }
+
+  function closeModal(){
+    overlay.classList.remove('open');
+  }
+
+  document.querySelectorAll('.perk').forEach(function(card){
+    card.addEventListener('click', function(e){
+      const perkCard = e.currentTarget;
+      const title = perkCard.getAttribute('data-title') || perkCard.querySelector('h3')?.innerText;
+      const desc = perkCard.getAttribute('data-desc') || perkCard.querySelector('p')?.innerText;
+      openModal(title, desc);
+    });
+  });
+
+  document.getElementById('modalCloseX').addEventListener('click', closeModal);
+  document.getElementById('modalCloseBtn').addEventListener('click', closeModal);
+  overlay.addEventListener('click', function(e){
+    if(e.target === overlay) closeModal();
+  });
+</script>
+
+</body>
+</html>
