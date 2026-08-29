@@ -121,13 +121,18 @@
   }
   .media-photo{
     height:360px;
-    background:linear-gradient(135deg,#caa46b 0%,#8a6b3f 45%,#4f7a52 100%);
     position:relative;
     display:flex;
-    align-items:flex-end;
+    align-items:center;
     justify-content:center;
-    gap:18px;
-    padding-bottom:36px;
+    overflow:hidden;
+    background:#111;
+  }
+  .media-photo img{
+    width:100%;
+    height:100%;
+    object-fit:cover;
+    display:block;
   }
   .media-controls{
     display:flex;
@@ -445,46 +450,7 @@
 
   <div class="media-card">
     <div class="media-photo" style="padding:0;">
-      <svg viewBox="0 0 500 340" width="100%" height="100%" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMax slice" role="img" aria-label="Illustration of two iced Vietnamese coffee drinks">
-        <defs>
-          <linearGradient id="sky" x1="0" y1="0" x2="0" y2="1">
-            <stop offset="0%" stop-color="#bfe3f0"/>
-            <stop offset="100%" stop-color="#e7f4e0"/>
-          </linearGradient>
-        </defs>
-        <rect x="0" y="0" width="500" height="340" fill="url(#sky)"/>
-        <circle cx="90" cy="70" r="46" fill="#f5e7b8" opacity="0.7"/>
-        <ellipse cx="60" cy="300" rx="220" ry="60" fill="#dfeedd"/>
-
-        <!-- Cup 1 -->
-        <g transform="translate(60,300) rotate(-8)">
-          <ellipse cx="0" cy="10" rx="46" ry="20" fill="#3b2415"/>
-          <path d="M-38 -170 L38 -170 L30 40 Q0 55 -30 40 Z" fill="#f4efe6" stroke="#c9c2b3" stroke-width="1.5"/>
-          <path d="M-33 -95 L29 -95 L23 30 Q0 40 -25 30 Z" fill="#4a2e18"/>
-          <path d="M-33 -95 L29 -95 L27 -70 L-31 -70 Z" fill="#f3e5ab"/>
-          <ellipse cx="-2" cy="-172" rx="40" ry="10" fill="#f4efe6" stroke="#c9c2b3" stroke-width="1.5"/>
-          <ellipse cx="-2" cy="-176" rx="30" ry="6" fill="#ffffff" stroke="#c9c2b3" stroke-width="1"/>
-          <rect x="-7" y="-210" width="8" height="46" rx="3" fill="#e4653a"/>
-          <text x="-2" y="-15" text-anchor="middle" font-family="Inter, sans-serif" font-size="10" font-weight="800" fill="#ffffff" letter-spacing="0.5">HANOI DRIP</text>
-        </g>
-
-        <!-- Cup 2 -->
-        <g transform="translate(260,300) rotate(6)">
-          <ellipse cx="0" cy="10" rx="46" ry="20" fill="#3b2415"/>
-          <path d="M-38 -170 L38 -170 L30 40 Q0 55 -30 40 Z" fill="#f4efe6" stroke="#c9c2b3" stroke-width="1.5"/>
-          <path d="M-33 -60 L27 -60 L23 30 Q0 40 -25 30 Z" fill="#3b2415"/>
-          <path d="M-34 -95 L28 -95 L27 -60 L-33 -60 Z" fill="#f9f3e3"/>
-          <path d="M-33 -95 L29 -95 L27 -128 L-31 -128 Z" fill="#d4a359"/>
-          <path d="M-31 -128 L27 -128 L26 -145 L-30 -145 Z" fill="#e8c872"/>
-          <ellipse cx="-2" cy="-172" rx="40" ry="10" fill="#f4efe6" stroke="#c9c2b3" stroke-width="1.5"/>
-          <ellipse cx="-2" cy="-176" rx="30" ry="6" fill="#ffffff" stroke="#c9c2b3" stroke-width="1"/>
-          <rect x="-7" y="-210" width="8" height="46" rx="3" fill="#8a6b3f"/>
-          <text x="-2" y="-30" text-anchor="middle" font-family="Inter, sans-serif" font-size="10" font-weight="800" fill="#ffffff" letter-spacing="0.5">HANOI DRIP</text>
-        </g>
-
-        <path d="M-20 340 Q10 220 90 175 Q120 160 130 175 L150 340 Z" fill="#c9946b"/>
-        <path d="M180 340 Q210 220 260 178 Q285 165 300 178 L320 340 Z" fill="#a06b47"/>
-      </svg>
+      <img src="https://kluveujanmooncwshkhm.supabase.co/storage/v1/object/public/gallery/hanoi-hero-drinks.png" alt="Hanoi Drip Coffee Specialty Drinks" onerror="this.src='https://images.unsplash.com/photo-1517701604599-bb29b565090c?auto=format&fit=crop&w=800&q=80'">
     </div>
     <div class="media-controls">
       <div class="arrow">‹</div>
@@ -590,7 +556,7 @@
       <h3 class="modal-reward-title" id="modalRewardTitle">6 Drinks Per Month</h3>
       <p class="modal-reward-desc" id="modalRewardDesc">Enjoy 6 free 16oz drinks per month. Limit one per day.</p>
       <hr class="modal-divider">
-      <div class="modal-timestamp" id="modalTimestamp">--</div>
+      <div class="modal-timestamp" id="modalTimestamp">Aug 28, 2026 · 11:14 PM</div>
     </div>
 
     <div class="modal-footer">
