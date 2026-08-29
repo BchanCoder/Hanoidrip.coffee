@@ -14,7 +14,7 @@
     --muted:#6b6f76;
     --line:#e7e5e0;
     --chip:#f2f1ee;
-    --accent:#8a6b3f;   /* warm coffee brown, used sparingly */
+    --accent:#8a6b3f;
   }
   *{box-sizing:border-box;}
   body{
@@ -206,12 +206,13 @@
     transform:translateY(-2px);
   }
   .perk-photo{
-    height:150px;
+    height:180px;
     background:linear-gradient(135deg,var(--p1,#caa46b),var(--p2,#4f7a52));
     display:flex;
     align-items:center;
     justify-content:center;
     font-size:34px;
+    overflow:hidden;
   }
   .perk-body{padding:16px 18px 20px;}
   .perk h3{
@@ -224,7 +225,7 @@
     line-height:1.55;
     color:var(--muted);
     margin:0 0 12px;
-    min-height:56px;
+    min-height:48px;
   }
   .included-tag{
     display:inline-block;
@@ -423,7 +424,6 @@
         <circle cx="90" cy="70" r="46" fill="#f5e7b8" opacity="0.7"/>
         <ellipse cx="60" cy="300" rx="220" ry="60" fill="#dfeedd"/>
 
-        <!-- Cup 1: Iced Phin Drip -->
         <g transform="translate(60,300) rotate(-8)">
           <ellipse cx="0" cy="10" rx="46" ry="20" fill="#3b2415"/>
           <path d="M-38 -170 L38 -170 L30 40 Q0 55 -30 40 Z" fill="#f4efe6" stroke="#c9c2b3" stroke-width="1.5"/>
@@ -435,7 +435,6 @@
           <text x="-2" y="-15" text-anchor="middle" font-family="Inter, sans-serif" font-size="10" font-weight="800" fill="#ffffff" letter-spacing="0.5">HANOI DRIP</text>
         </g>
 
-        <!-- Cup 2: Vietnamese Salt/Egg Coffee -->
         <g transform="translate(260,300) rotate(6)">
           <ellipse cx="0" cy="10" rx="46" ry="20" fill="#3b2415"/>
           <path d="M-38 -170 L38 -170 L30 40 Q0 55 -30 40 Z" fill="#f4efe6" stroke="#c9c2b3" stroke-width="1.5"/>
@@ -468,18 +467,13 @@
 <section class="section wrap">
   <h2>Membership Includes</h2>
   <div class="perks">
-    <div class="perk" data-title="6 Signature Phin Drinks" data-desc="Enjoy 6 free signature Vietnamese coffees per month (Cà Phê Sữa Đá, Egg Coffee, Salt Coffee, or Cold Brew).">
-      <div class="perk-photo" style="--p1:#d9c79a;--p2:#7a5a34;padding:0;">
-        <svg viewBox="0 0 160 150" width="72" height="90" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Illustration of a Vietnamese drip coffee cup">
-          <path d="M55 20 L105 20 L98 130 Q80 140 62 130 Z" fill="#f4efe6" stroke="#c9c2b3" stroke-width="1.5"/>
-          <path d="M58 70 L102 70 L98 120 Q80 128 64 120 Z" fill="#4a2e18"/>
-          <ellipse cx="80" cy="18" rx="28" ry="7" fill="#f4efe6" stroke="#c9c2b3" stroke-width="1.5"/>
-          <rect x="76" y="0" width="6" height="24" rx="2" fill="#e4653a"/>
-        </svg>
+    <div class="perk" data-title="6 Drinks Per Month" data-desc="Enjoy 6 free 16 oz drinks per month. Limit one per day.">
+      <div class="perk-photo" style="padding:0; overflow:hidden;">
+        <img src="https://kluveujanmooncwshkhm.supabase.co/storage/v1/object/public/gallery/w6rbd9d7qh.png" alt="6 Drinks Per Month" style="width:100%; height:100%; object-fit:cover; display:block;">
       </div>
       <div class="perk-body">
-        <h3>6 Signature Phin Drinks</h3>
-        <p>Enjoy 6 free specialty drinks per month. Limit one per day.</p>
+        <h3>6 Drinks Per Month</h3>
+        <p>Enjoy 6 free 16 oz drinks per month. Limit one per day.</p>
         <span class="included-tag">Included</span>
       </div>
     </div>
@@ -544,8 +538,8 @@
         <span class="modal-reward-label">HANOI DRIP CLUB REWARD</span>
         <span style="color:#1fa860;font-size:16px;">★</span>
       </div>
-      <h3 class="modal-reward-title" id="modalRewardTitle">6 Signature Phin Drinks</h3>
-      <p class="modal-reward-desc" id="modalRewardDesc">Enjoy 6 free signature Vietnamese coffees per month.</p>
+      <h3 class="modal-reward-title" id="modalRewardTitle">6 Drinks Per Month</h3>
+      <p class="modal-reward-desc" id="modalRewardDesc">Enjoy 6 free 16 oz drinks per month. Limit one per day.</p>
       <hr class="modal-divider">
       <div class="modal-timestamp" id="modalTimestamp">--</div>
     </div>
