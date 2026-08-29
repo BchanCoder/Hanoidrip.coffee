@@ -323,4 +323,292 @@
     margin:4px auto 18px;
   }
   .modal-check svg{
-    width:48px
+    width:48px;height:48px;
+  }
+  .modal-title{
+    text-align:center;
+    font-size:32px;
+    font-weight:800;
+    margin:0 0 6px;
+    letter-spacing:-0.02em;
+  }
+  .modal-sub{
+    text-align:center;
+    font-size:15px;
+    color:rgba(255,255,255,0.9);
+    margin:0 0 22px;
+    font-weight:500;
+  }
+  .modal-reward-card{
+    background:#ffffff;
+    color:var(--ink);
+    border-radius:20px;
+    padding:22px 22px 20px;
+    box-shadow:0 10px 25px rgba(0,0,0,0.06);
+  }
+  .modal-reward-top{
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+    margin-bottom:8px;
+  }
+  .modal-reward-label{
+    font-size:11px;
+    font-weight:800;
+    letter-spacing:0.06em;
+    color:#20be6b;
+  }
+  .modal-reward-star{
+    color:#20be6b;
+    font-size:15px;
+  }
+  .modal-reward-title{
+    font-size:23px;
+    font-weight:800;
+    margin:0 0 8px;
+    letter-spacing:-0.01em;
+    color:#111827;
+  }
+  .modal-reward-desc{
+    font-size:14px;
+    color:#6b7280;
+    line-height:1.5;
+    margin:0;
+  }
+  .modal-divider{
+    border:none;
+    border-top:1px solid #f0eee9;
+    margin:18px 0 14px;
+  }
+  .modal-timestamp{
+    font-size:13px;
+    color:#9ca3af;
+    font-weight:500;
+  }
+  .modal-footer{
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+    margin-top:20px;
+    padding:0 4px;
+  }
+  .modal-member{
+    display:flex;
+    align-items:center;
+    gap:12px;
+  }
+  .modal-avatar{
+    width:42px;height:42px;
+    border-radius:50%;
+    background:rgba(255,255,255,0.28);
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    font-weight:800;
+    font-size:17px;
+  }
+  .modal-member-name{
+    font-weight:700;
+    font-size:16px;
+    line-height:1.2;
+  }
+  .modal-member-id{
+    font-size:12px;
+    color:rgba(255,255,255,0.8);
+    margin-top:2px;
+  }
+  .modal-close-btn{
+    background:none;
+    border:none;
+    color:#fff;
+    font-weight:700;
+    font-size:16px;
+    cursor:pointer;
+    padding:8px 12px;
+  }
+</style>
+</head>
+<body>
+
+<div class="topbar"></div>
+
+<nav class="nav">
+  <div class="brand">
+    <div class="brand-mark">☕</div>
+    Hanoi Drip Coffee
+  </div>
+  <button class="btn btn-dark">Join Membership</button>
+</nav>
+
+<header class="wrap hero">
+  <div>
+    <div class="rating-chip">★ 4.9 across 840+ reviews</div>
+    <h1>Get 6 Free Drinks Every Month!</h1>
+    <p class="lede">Join the Hanoi Drip Coffee club to enjoy authentic Phin drip brews, signature Egg &amp; Salt coffees, secret tasting flights, and 15% off whole-bean Robusta bags.</p>
+    <button class="btn btn-dark">Join For 50% Off Your 1st Month</button>
+  </div>
+
+  <div class="media-card">
+    <div class="media-photo" style="padding:0; overflow:hidden; height:360px;">
+      <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcThP2bMZRbm1rB2LtgrxND6eEfOcVUyGCq6zSpMuDubKDiyGjLe" alt="Hanoi Drip Coffee Drinks" style="width:100%; height:100%; object-fit:cover; display:block;">
+    </div>
+    <div class="media-controls">
+      <div class="arrow">‹</div>
+      <div class="dots-track"></div>
+      <div class="arrow">›</div>
+    </div>
+    <div class="media-foot">
+      <div class="promo">🏷️ Try 30 days for $12.50</div>
+      <div class="price">$25/month</div>
+    </div>
+  </div>
+</header>
+
+<section class="section wrap">
+  <h2>Membership Includes</h2>
+  <div class="perks">
+    <!-- Perk 1 -->
+    <div class="perk" data-title="6 Drinks Per Month" data-desc="Enjoy 6 free 16oz drinks per month. Limit one per day.">
+      <div class="perk-photo" style="padding:0; overflow:hidden; height:180px;">
+        <img src="https://kluveujanmooncwshkhm.supabase.co/storage/v1/object/public/gallery/w6rbd9d7qh.png" alt="6 Drinks Per Month" style="width:100%; height:100%; object-fit:cover; display:block;">
+      </div>
+      <div class="perk-body">
+        <h3>6 Drinks Per Month</h3>
+        <p>Enjoy 6 free 16 oz drinks per month. Limit one per day.</p>
+        <span class="included-tag">Included</span>
+      </div>
+    </div>
+
+    <!-- Perk 2 -->
+    <div class="perk" data-title="BOGO Drink for a Friend" data-desc="Buy any drink, get a free drink for a friend of equal or lesser value.">
+      <div class="perk-photo" style="padding:0; overflow:hidden; height:180px;">
+        <img src="https://kluveujanmooncwshkhm.supabase.co/storage/v1/object/public/gallery/oyidhqz9o5.png" alt="BOGO Drink for a Friend" style="width:100%; height:100%; object-fit:cover; display:block;">
+      </div>
+      <div class="perk-body">
+        <h3>BOGO Drink for a Friend</h3>
+        <p>Buy any drink, get a free drink for a friend of equal or lesser value.</p>
+        <span class="included-tag">Included</span>
+      </div>
+    </div>
+
+    <!-- Perk 3 -->
+    <div class="perk" data-title="Birthday Specialty Drink" data-desc="Celebrate with any large specialty drink on your birthday! Valid one day either side.">
+      <div class="perk-photo" style="--p1:#e7b7c4;--p2:#a4677c;">🎂</div>
+      <div class="perk-body">
+        <h3>Birthday Drink</h3>
+        <p>Enjoy a free handcrafted drink on your birthday with flexible redemption.</p>
+        <span class="included-tag">Included</span>
+      </div>
+    </div>
+
+    <!-- Perk 4 -->
+    <div class="perk" data-title="15% Off Roasted Robusta Bags" data-desc="15% off all premium whole-bean and ground Vietnamese Robusta bags and Phin drippers.">
+      <div class="perk-photo" style="--p1:#c9b79a;--p2:#5a4632;">🏷️</div>
+      <div class="perk-body">
+        <h3>15% Off Beans &amp; Merch</h3>
+        <p>Exclusive discounts on coffee beans, Phin filters, and merch in-store &amp; online.</p>
+        <span class="included-tag">Included</span>
+      </div>
+    </div>
+
+    <!-- Perk 5 -->
+    <div class="perk" data-title="Secret Menu & Tasting Flights" data-desc="Get exclusive first access to seasonal experimental batches, coconut foam recipes, and testing flights.">
+      <div class="perk-photo" style="--p1:#5c6b3a;--p2:#242b16;">🔒</div>
+      <div class="perk-body">
+        <h3>Secret Menu Access</h3>
+        <p>Early access to seasonal off-menu drinks and limited tasting batches.</p>
+        <span class="included-tag">Included</span>
+      </div>
+    </div>
+
+    <!-- Perk 6 -->
+    <div class="perk" data-title="VIP Drop & Event Invites" data-desc="Priority RSVP to cupping workshops, local pop-ups, and limited roast releases.">
+      <div class="perk-photo" style="--p1:#3a3a3a;--p2:#111111;">📣</div>
+      <div class="perk-body">
+        <h3>Exclusive Announcements</h3>
+        <p>Be the first to know about single-origin drops, pop-ups, and events.</p>
+        <span class="included-tag">Included</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- REDEEM MODAL (POPUP) -->
+<div class="modal-overlay" id="modalOverlay">
+  <div class="modal-card">
+    <button class="modal-close-x" id="modalCloseX" aria-label="Close">✕</button>
+    <div class="modal-handle"><span></span><span></span><span></span></div>
+    
+    <div class="modal-check">
+      <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <path d="M5 13l4 4L19 7" stroke="#ffffff" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
+      </svg>
+    </div>
+
+    <h2 class="modal-title">Valid offer!</h2>
+    <p class="modal-sub">Show this to our staff.</p>
+
+    <div class="modal-reward-card">
+      <div class="modal-reward-top">
+        <span class="modal-reward-label">MEMBERSHIP REWARD</span>
+        <span class="modal-reward-star">★</span>
+      </div>
+      <h3 class="modal-reward-title" id="modalRewardTitle">6 Drinks Per Month</h3>
+      <p class="modal-reward-desc" id="modalRewardDesc">Enjoy 6 free 16oz drinks per month. Limit one per day.</p>
+      <hr class="modal-divider">
+      <div class="modal-timestamp" id="modalTimestamp">--</div>
+    </div>
+
+    <div class="modal-footer">
+      <div class="modal-member">
+        <div class="modal-avatar">J</div>
+        <div>
+          <div class="modal-member-name">Jordan Lee</div>
+          <div class="modal-member-id">#8757446</div>
+        </div>
+      </div>
+      <button class="modal-close-btn" id="modalCloseBtn">Close</button>
+    </div>
+  </div>
+</div>
+
+<script>
+  const overlay = document.getElementById('modalOverlay');
+  const rewardTitle = document.getElementById('modalRewardTitle');
+  const rewardDesc = document.getElementById('modalRewardDesc');
+  const timestampEl = document.getElementById('modalTimestamp');
+
+  function openModal(title, desc){
+    rewardTitle.textContent = title;
+    rewardDesc.textContent = desc;
+    
+    const now = new Date();
+    const dateStr = now.toLocaleDateString('en-US', { month:'short', day:'numeric', year:'numeric' });
+    const timeStr = now.toLocaleTimeString('en-US', { hour:'numeric', minute:'2-digit', hour12:true });
+    timestampEl.textContent = `${dateStr} · ${timeStr}`;
+    
+    overlay.classList.add('open');
+  }
+
+  function closeModal(){
+    overlay.classList.remove('open');
+  }
+
+  document.querySelectorAll('.perk').forEach(function(card){
+    card.addEventListener('click', function(e){
+      const perkCard = e.currentTarget;
+      const title = perkCard.getAttribute('data-title') || perkCard.querySelector('h3')?.innerText;
+      const desc = perkCard.getAttribute('data-desc') || perkCard.querySelector('p')?.innerText;
+      openModal(title, desc);
+    });
+  });
+
+  document.getElementById('modalCloseX').addEventListener('click', closeModal);
+  document.getElementById('modalCloseBtn').addEventListener('click', closeModal);
+  overlay.addEventListener('click', function(e){
+    if(e.target === overlay) closeModal();
+  });
+</script>
+
+</body>
+</html>
